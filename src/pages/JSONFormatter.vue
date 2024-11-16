@@ -3,6 +3,7 @@ import { ref, shallowRef } from 'vue';
 import InputLabel from './components/InputLabel.vue';
 import InputText from './components/InputText.vue';
 import { getActionData } from './components/store/data';
+
 //Editor
 import { VueMonacoEditor } from '@guolao/vue-monaco-editor';
 
