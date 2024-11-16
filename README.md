@@ -1,8 +1,8 @@
-# OmniScript Helper
+# OmniScript Input JSON Formatter (Runtime)
 
 - Formats input from Runtime OmniScript Actions
 
-Visit [OmniScript Helper](https://rohitasare7.github.io/SF-OmniScript-Helper/)
+Visit [OmniScript Input JSON Formatter](https://rohitasare7.github.io/SF-OmniScript-Helper/)
 
 ### Commands to push to gh pages
 
