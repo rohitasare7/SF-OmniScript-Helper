@@ -2,6 +2,8 @@
 
 - Formats input from Runtime OmniScript Actions
 
+Visit [OmniScript Helper](https://rohitasare7.github.io/SF-OmniScript-Helper/)
+
 ### Commands to push to gh pages
 
 ```sh
