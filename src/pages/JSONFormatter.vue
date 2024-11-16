@@ -2,6 +2,7 @@
 import { ref, shallowRef } from 'vue';
 import InputLabel from './components/InputLabel.vue';
 import InputText from './components/InputText.vue';
+import { getActionData } from './components/store/data';
 //Editor
 import { VueMonacoEditor } from '@guolao/vue-monaco-editor';
 
@@ -38,25 +39,13 @@ const formatCode = () => {
     jsonInput.value = JSON.stringify(JSON.parse(jsonInput.value), null, 4);
 }
 
-//Get Action Type label
-const actionLabels = [
-    {
-        actionType: 'vlocity_cmt.IntegrationProcedureService',
-        actionLabel: 'Integration Procedure'
-    }
-];
-
-// Method to get the action label based on the actionType
-const getActionLabel = (actionType) => {
-    const action = actionLabels.find((item) => item.actionType === actionType);
-    return action ? action.actionLabel : 'Action type not found';
-};
 
 // Actual Formatting starts
 const jsonInput = ref('');
 const jsonOutput = ref('');
 const actionType = ref('');
 const actionName = ref('');
+const actionElementLabel = ref('');
 
 const beautifyJson = () => {
     try {
@@ -73,9 +62,11 @@ const beautifyJson = () => {
         jsonOutput.value = JSON.stringify(JSON.parse(cleanedJson), null, 4);
         //Get Action Data
         const actionTypeStr = parsedJson?.actions[0]?.params?.params?.sClassName;
-        actionName.value = parsedJson?.actions[0]?.params?.params?.sMethodName;
+        actionName.value = parsedJson?.actions[0]?.params?.params?.sMethodName; // check this for diff things
         if (actionTypeStr) {
-            actionType.value = getActionLabel(actionTypeStr);
+            const actionItem = getActionData(actionTypeStr);
+            actionType.value = actionItem.actionLabel;
+            actionElementLabel.value = actionItem.elementLabel;
         }
 
     } catch (error) {
@@ -95,12 +86,12 @@ const beautifyJson = () => {
 
         <div v-if="actionType || actionName" class="flex gap-4">
             <div class="flex flex-col">
-                <InputLabel value="Action" class="mb-1" />
+                <InputLabel value="You are calling : " class="mb-1" />
                 <InputText :value="actionType" :readonly="true" :displayCopyBtn="false" />
             </div>
 
             <div class="flex flex-col">
-                <InputLabel value="Element" class="mb-1" />
+                <InputLabel :value="actionElementLabel + ' Name : '" class="mb-1" />
                 <InputText :value="actionName" :readonly="true" />
             </div>
         </div>
