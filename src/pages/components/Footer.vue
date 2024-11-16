@@ -67,36 +67,17 @@
                 </svg>
             </a>
 
-
-            <a href="https://forms.gle/aVC82TBjCeQjUCrDA" target="_blank"
+            <a href="mailto:rohitasare7@gmail.com" target="_blank"
                 class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white text-sm">
                 Request Feature
             </a>
-            <!-- <p class="text-gray-500 dark:text-gray-400 text-sm">Please consider bookmarking this URL for convenient and quick access in the future.</p> -->
         </div>
-
-        <!-- <ul class="flex flex-wrap items-center mb-6 space-y-1 md:mb-0">
-            <a href="#" class="text-gray-500 hover:underline md:mr-6 dark:text-gray-400">Feedback</a>
-            <a href="mailto:thatsfdcguy@gmail.com" class="text-gray-500 hover:underline md:mr-6 dark:text-gray-400">Raise Issue</a>
-            <a href="mailto:thatsfdcguy@gmail.com" class="text-gray-500 hover:underline md:mr-6 dark:text-gray-400">Contact</a>
-        </ul> -->
-
-        <!-- <p class="text-sm text-center text-gray-500 dark:text-gray-400 mt-4 md:mt-0 flex items-center justify-center">
-            Built with
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="inline-block mr-1 ml-1">
-                <path fill="#f05542"
-                    d="M5.301 3.002c-.889-.047-1.759.247-2.404.893-1.29 1.292-1.175 3.49.26 4.926l.515.515L8.332 14l4.659-4.664.515-.515c1.435-1.437 1.55-3.634.26-4.926-1.29-1.292-3.483-1.175-4.918.262l-.516.517-.517-.517C7.098 3.438 6.19 3.049 5.3 3.002z">
-                </path>
-            </svg>
-            by 
-            <a href="https://www.youtube.com/@ThatSalesforceGuy" target="_blank"
-                class="font-semibold dark:text-gray-300 ml-1">That Salesforce Guy</a>
-        </p> -->
-
         <p class="text-sm text-center text-gray-500 dark:text-gray-400 mt-4 md:mt-0">Hey Curious 👋 I'm <a
                 href="https://rohitasare7.github.io" target="_blank"
                 class="font-semibold dark:text-gray-300 underline">Rohitkumar</a>, the creator of Random Data Generator.
-            You can follow my work on <a href="https://twitter.com/salesforceguy" target="_blank"
+            You can follow my work on <a href="https://www.linkedin.com/in/rohit-asare/" target="_blank"
+                class="font-semibold dark:text-gray-300 underline ml-1">LinkedIn</a> and <a
+                href="https://twitter.com/salesforceguy" target="_blank"
                 class="font-semibold dark:text-gray-300 underline ml-1">Twitter.</a></p>
     </footer>
 
