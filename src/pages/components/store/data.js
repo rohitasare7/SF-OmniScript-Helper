@@ -1,10 +1,11 @@
 // Vars
 const DATA_MAPPER = "Data Mapper";
+const INTEGRATION_PROCEDURE = "Integration Procedure";
 //Get Action Type label
 const actionLabels = [
   {
     actionType: "vlocity_cmt.IntegrationProcedureService",
-    actionLabel: "Integration Procedure",
+    actionLabel: INTEGRATION_PROCEDURE,
     elementLabel: "IP",
   },
   {
@@ -26,6 +27,22 @@ const actionLabels = [
     actionType: "ApexRemoteClass",
     actionLabel: "Remote Action",
     elementLabel: "Apex Class",
+  },
+  //Std Runtime
+  {
+    actionType: "omnistudiocore.IPService",
+    actionLabel: INTEGRATION_PROCEDURE,
+    elementLabel: "IP",
+  },
+  {
+    actionType: "omnistudiocore.DefaultDROmniScriptIntegration",
+    actionLabel: DATA_MAPPER, // sMethodName : invokeOutboundDR , invokeInboundDR, invokeTransformDR
+    elementLabel: DATA_MAPPER,
+  },
+  {
+    actionType: "omnistudiocore.DefaultOmniscriptApexRestService",
+    actionLabel: "HTTP Action", // sMethodName : generateApexRestRequest
+    elementLabel: "API",
   },
 ];
 
