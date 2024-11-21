@@ -1,15 +1,7 @@
 <script setup>
 import { onMounted, readonly, ref } from 'vue';
 //Add Toast
-import toast from "../../assets/js/toast";
-const addToast = (toastText, toastType = null) => {
-    toast.add({
-        message: {
-            text: toastText,
-            type: toastType,
-        },
-    });
-}
+import { addToast } from '../../assets/js/utility';
 
 const props = defineProps({
     value: String,

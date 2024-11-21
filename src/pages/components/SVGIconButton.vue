@@ -5,8 +5,8 @@ defineProps({
         default: 'button',
     },
     icon: {
-        type: String,
-        default: '',
+        type: Object,
+        default: {},
     },
     color: {
         type: String,

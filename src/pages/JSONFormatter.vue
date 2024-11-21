@@ -2,7 +2,14 @@
 import { ref, shallowRef } from 'vue';
 import InputLabel from './components/InputLabel.vue';
 import InputText from './components/InputText.vue';
+import PrimaryButton from './components/PrimaryButton.vue';
+//icons
+import SVGIconButton from './components/SVGIconButton.vue';
+import copy_icon from '../assets/icons/copy_icon.vue';
+import reset_icon from '../assets/icons/reset_icon.vue';
+//helper
 import { getActionData } from './components/store/data';
+import { copyData } from '../assets/js/utility';
 
 //Editor
 import { VueMonacoEditor } from '@guolao/vue-monaco-editor';
@@ -75,6 +82,16 @@ const beautifyJson = () => {
     }
 };
 
+//reset editors
+const resetData = () => {
+    jsonInput.value = '';
+    jsonOutput.value = '';
+}
+
+const copyOutput = () => {
+    copyData(jsonOutput.value, 'Output copied successfully.');
+}
+
 </script>
 
 <template>
@@ -97,11 +114,15 @@ const beautifyJson = () => {
             </div>
         </div>
 
-
-
         <div class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 mt-4">
             <div class="w-full mr-3 lg:w-1/2">
-                <InputLabel value="Input JSON" class="mt-2"></InputLabel>
+
+                <div class="flex justify-between">
+                    <InputLabel value="Input JSON" class="mt-2"></InputLabel>
+                    <SVGIconButton @click="resetData" :icon="reset_icon" :isSquare="false" color="red"
+                        title="Reset Data" class="mr-2" />
+                </div>
+
                 <VueMonacoEditor v-model:value="jsonInput" :theme="editorTheme" @mount="handleMount" height="600px"
                     :language="editorCodeLang" :options="OPTIONS"
                     class="rounded-lg overflow-hidden shadow-lg border mt-6" :style="'margin-top:10px'"
@@ -109,20 +130,19 @@ const beautifyJson = () => {
             </div>
 
             <div class="w-full mr-3 lg:w-1/2">
-                <InputLabel value="Output JSON" class="mt-2"></InputLabel>
+                <div class="flex justify-between">
+                    <InputLabel value="Output JSON" class="mt-2"></InputLabel>
+                    <SVGIconButton @click="copyOutput" :icon="copy_icon" :isSquare="false" color="blue"
+                        title="Copy Output JSON" class="mr-2" />
+                </div>
+
                 <VueMonacoEditor v-model:value="jsonOutput" :theme="editorTheme" @mount="handleMount" height="600px"
                     :language="editorCodeLang" :options="OPTIONS"
                     class="rounded-lg overflow-hidden shadow-lg border mt-6" :style="'margin-top:10px'"
                     @change="beautifyJson" />
             </div>
         </div>
-
-
-
-
     </div>
     <!-- Top Container Ends-->
-
-
 
 </template>
